@@ -1,0 +1,66 @@
+# CompilerName=msvcpp170
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root\build\win64
+matlabdir = C:\Program Files\MATLAB\R2024b
+startdir = C:\Users\aledi\Documents\GitHub\MatlabMEX\StochasticGrowthModel
+
+# Toolchain information
+cc = cl
+cxx = cl
+linker = link
+linkerxx = link
+
+cflags =  /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I "$root" /I "$startdir" /I "$matlabdir\toolbox\gpucoder\src\gpucoderrt\export\include\gpucoderrt" /I "$matlabdir\sys\cuda\win64\cuda\include" /I "$root\interface" /I "$matlabdir\extern\include" /I "." -DMW_CUDA_ARCH=750 -DMW_GPU_MEMORY_MANAGER -DMODEL=rbc_solver_interp_gpu_mex -DMW_NEEDS_VERSION_H  
+
+cxxflags =  /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I "$root" /I "$startdir" /I "$matlabdir\toolbox\gpucoder\src\gpucoderrt\export\include\gpucoderrt" /I "$matlabdir\sys\cuda\win64\cuda\include" /I "$root\interface" /I "$matlabdir\extern\include" /I "." -DMW_CUDA_ARCH=750 -DMW_GPU_MEMORY_MANAGER -DMODEL=rbc_solver_interp_gpu_mex -DMW_NEEDS_VERSION_H  
+
+ldflags =  -Xlinker /nologo -Xlinker /DLL -L"$matlabdir\extern\lib\win64\microsoft" libmx.lib libmex.lib libmat.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib   -L"$matlabdir\sys\cuda\win64\cuda\lib\x64" -L"$matlabdir\bin\win64" libemlrt.lib libcovrt.lib libut.lib libmwmathutil.lib -L"$matlabdir\lib\win64" gpucoderrt.lib -arch sm_75 -I"$matlabdir\sys\cuda\win64\cuda\include" -lcublas -lcusolver -lcufft -lcurand -lcusparse -Xnvlink -w  -Wno-deprecated-gpu-targets -Xlinker /NODEFAULTLIB:libcmt.lib
+
+ldxxflags =  -Xlinker /nologo -Xlinker /DLL -L"$matlabdir\extern\lib\win64\microsoft" libmx.lib libmex.lib libmat.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib libMatlabDataArray.lib libMatlabEngine.lib   -L"$matlabdir\sys\cuda\win64\cuda\lib\x64" -L"$matlabdir\bin\win64" libemlrt.lib libcovrt.lib libut.lib libmwmathutil.lib -L"$matlabdir\lib\win64" gpucoderrt.lib -arch sm_75 -I"$matlabdir\sys\cuda\win64\cuda\include" -lcublas -lcusolver -lcufft -lcurand -lcusparse -Xnvlink -w  -Wno-deprecated-gpu-targets -Xlinker /NODEFAULTLIB:libcmt.lib
+
+linkobjs = 
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in /Fo$out
+
+rule cxx
+    command = $cxx $cxxflags $in /Fo$out
+
+rule link
+    command = $linker @$out.rsp $linkobjs $ldflags
+    rspfile = $out.rsp
+    rspfile_content = $in
+
+rule linkxx
+    command = $linkerxx $in $linkobjs $ldxxflags
+
+cudac = nvcc
+linkercuda = nvcc
+
+cudaflags =  -c -rdc=true -Wno-deprecated-gpu-targets -Xcompiler "/wd 4819" -Xcompiler "/MD" -Xcudafe "--display_error_number --diag_suppress=2381 --diag_suppress=unsigned_compare_with_zero --diag_suppress=useless_type_qualifier_on_return_type" -D_GNU_SOURCE -DMATLAB_MEX_FILE --no-exceptions -Xcompiler "/EHa" -noprof -ldir "$matlabdir/bin/win64" -Xcompiler "/utf-8" -I "$root" -I "$startdir" -I "$matlabdir\toolbox\gpucoder\src\gpucoderrt\export\include\gpucoderrt" -I "$matlabdir\sys\cuda\win64\cuda\include" -I "$root\interface" -I "$matlabdir\extern\include" -I "." -DMW_CUDA_ARCH=750 -DMW_GPU_MEMORY_MANAGER -DMODEL=rbc_solver_interp_gpu_mex -DMW_NEEDS_VERSION_H  -arch sm_75 -I "$matlabdir/simulink/include" -I "$matlabdir/toolbox/shared/simtargets"
+rule cudac
+    command = $cudac $cudaflags $in -o $out
+
+rule linkcuda
+    command = $linkercuda $linkobjs $ldflags -o $out $in
+
+# Build
+build $builddir\MWLaunchParametersUtilities.obj : cudac $root\MWLaunchParametersUtilities.cpp
+build $builddir\MWCUBLASUtils.obj : cudac $root\MWCUBLASUtils.cpp
+build $builddir\rbc_solver_interp_gpu_data.obj : cudac $root\rbc_solver_interp_gpu_data.cu
+build $builddir\rt_nonfinite.obj : cudac $root\rt_nonfinite.cu
+build $builddir\rbc_solver_interp_gpu_initialize.obj : cudac $root\rbc_solver_interp_gpu_initialize.cu
+build $builddir\rbc_solver_interp_gpu_terminate.obj : cudac $root\rbc_solver_interp_gpu_terminate.cu
+build $builddir\rbc_solver_interp_gpu.obj : cudac $root\rbc_solver_interp_gpu.cu
+build $builddir\_coder_rbc_solver_interp_gpu_api.obj : cudac $root\interface\_coder_rbc_solver_interp_gpu_api.cu
+build $builddir\_coder_rbc_solver_interp_gpu_mex.obj : cudac $root\interface\_coder_rbc_solver_interp_gpu_mex.cu
+build $builddir\_coder_rbc_solver_interp_gpu_info.obj : cxx $root\interface\_coder_rbc_solver_interp_gpu_info.cpp
+build $builddir\cpp_mexapi_version.obj : cudac $root\cpp_mexapi_version.cpp
+
+# Link
+build $root\rbc_solver_interp_gpu_mex.mexw64 : linkcuda $builddir\MWLaunchParametersUtilities.obj $builddir\MWCUBLASUtils.obj $builddir\rbc_solver_interp_gpu_data.obj $builddir\rt_nonfinite.obj $builddir\rbc_solver_interp_gpu_initialize.obj $builddir\rbc_solver_interp_gpu_terminate.obj $builddir\rbc_solver_interp_gpu.obj $builddir\_coder_rbc_solver_interp_gpu_api.obj $builddir\_coder_rbc_solver_interp_gpu_mex.obj $builddir\_coder_rbc_solver_interp_gpu_info.obj $builddir\cpp_mexapi_version.obj 

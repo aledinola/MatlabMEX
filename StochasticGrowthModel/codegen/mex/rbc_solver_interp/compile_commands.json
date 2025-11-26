@@ -1,0 +1,86 @@
+[
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  rbc_solver_interp_data.c /Fobuild\\win64\\rbc_solver_interp_data.obj",
+    "file": "rbc_solver_interp_data.c",
+    "output": "build/win64/rbc_solver_interp_data.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  rt_nonfinite.c /Fobuild\\win64\\rt_nonfinite.obj",
+    "file": "rt_nonfinite.c",
+    "output": "build/win64/rt_nonfinite.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  rbc_solver_interp_initialize.c /Fobuild\\win64\\rbc_solver_interp_initialize.obj",
+    "file": "rbc_solver_interp_initialize.c",
+    "output": "build/win64/rbc_solver_interp_initialize.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  rbc_solver_interp_terminate.c /Fobuild\\win64\\rbc_solver_interp_terminate.obj",
+    "file": "rbc_solver_interp_terminate.c",
+    "output": "build/win64/rbc_solver_interp_terminate.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  rbc_solver_interp.c /Fobuild\\win64\\rbc_solver_interp.obj",
+    "file": "rbc_solver_interp.c",
+    "output": "build/win64/rbc_solver_interp.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  mtimes.c /Fobuild\\win64\\mtimes.obj",
+    "file": "mtimes.c",
+    "output": "build/win64/mtimes.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  interface\\_coder_rbc_solver_interp_api.c /Fobuild\\win64\\_coder_rbc_solver_interp_api.obj",
+    "file": "interface/_coder_rbc_solver_interp_api.c",
+    "output": "build/win64/_coder_rbc_solver_interp_api.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  interface\\_coder_rbc_solver_interp_mex.c /Fobuild\\win64\\_coder_rbc_solver_interp_mex.obj",
+    "file": "interface/_coder_rbc_solver_interp_mex.c",
+    "output": "build/win64/_coder_rbc_solver_interp_mex.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  brent_min.c /Fobuild\\win64\\brent_min.obj",
+    "file": "brent_min.c",
+    "output": "build/win64/brent_min.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  eml_int_forloop_overflow_check.c /Fobuild\\win64\\eml_int_forloop_overflow_check.obj",
+    "file": "eml_int_forloop_overflow_check.c",
+    "output": "build/win64/eml_int_forloop_overflow_check.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  rbc_solver_interp_emxutil.c /Fobuild\\win64\\rbc_solver_interp_emxutil.obj",
+    "file": "rbc_solver_interp_emxutil.c",
+    "output": "build/win64/rbc_solver_interp_emxutil.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  rbc_solver_interp_mexutil.c /Fobuild\\win64\\rbc_solver_interp_mexutil.obj",
+    "file": "rbc_solver_interp_mexutil.c",
+    "output": "build/win64/rbc_solver_interp_mexutil.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  interface\\_coder_rbc_solver_interp_info.c /Fobuild\\win64\\_coder_rbc_solver_interp_info.obj",
+    "file": "interface/_coder_rbc_solver_interp_info.c",
+    "output": "build/win64/_coder_rbc_solver_interp_info.obj"
+  },
+  {
+    "directory": "C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\\codegen\\mex\\rbc_solver_interp",
+    "command": "cl /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I \".\" /I \"C:\\Users\\aledi\\Documents\\GitHub\\MatlabMEX\\StochasticGrowthModel\" /I \".\\interface\" /I \"C:\\Program Files\\MATLAB\\R2024b\\extern\\include\" /I \".\" -DMODEL=rbc_solver_interp_mex /openmp /wd4101  \"C:\\Program Files\\MATLAB\\R2024b\\extern\\version\\c_mexapi_version.c\" /Fobuild\\win64\\c_mexapi_version.obj",
+    "file": "C:/Program Files/MATLAB/R2024b/extern/version/c_mexapi_version.c",
+    "output": "build/win64/c_mexapi_version.obj"
+  }
+]

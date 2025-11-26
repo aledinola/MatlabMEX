@@ -1,0 +1,59 @@
+# CompilerName=msvc170
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root\build\win64
+matlabdir = C:\Program Files\MATLAB\R2024b
+startdir = C:\Users\aledi\Documents\GitHub\MatlabMEX\StochasticGrowthModel
+
+# Toolchain information
+cc = cl
+cxx = cl
+linker = link
+linkerxx = link
+
+cflags =  /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I "$root" /I "$startdir" /I "$root\interface" /I "$matlabdir\extern\include" /I "." -DMODEL=rbc_solver_interp_mex /openmp /wd4101 
+
+cxxflags =  /c /Zc:__cplusplus /Zp8 /GR /W3 /EHs /nologo /MD /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /D_SECURE_SCL=0   /DMATLAB_MEX_FILE  /DMATLAB_MEX_FILE /O2 /Oy- /DNDEBUG /fp:strict /utf-8 /I "$root" /I "$startdir" /I "$root\interface" /I "$matlabdir\extern\include" /I "." -DMODEL=rbc_solver_interp_mex /openmp /wd4101 
+
+ldflags =  /nologo    /DLL /LIBPATH:"$matlabdir\extern\lib\win64\microsoft" libmx.lib libmex.lib libmat.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib  /out:"rbc_solver_interp_mex.mexw64" /LIBPATH:"$matlabdir\extern\lib\win64\microsoft" libmwblas.lib libemlrt.lib libcovrt.lib libut.lib libmwmathutil.lib libiomp5md.lib /nodefaultlib:vcomp /LIBPATH:"$matlabdir\bin\win64" /export:mexFunction /export:mexfilerequiredapiversion /export:emlrtMexFcnProperties /export:rbc_solver_interp /export:rbc_solver_interp_initialize /export:rbc_solver_interp_terminate /export:rbc_solver_interp_atexit /export:emlrt_marshallIn /export:b_emlrt_marshallIn /export:g_emlrt_marshallIn /export:c_emxFreeStruct_anonymous_funct /export:emxFreeStruct_struct_T /export:c_emxInitStruct_anonymous_funct /export:emxInitStruct_struct_T /export:emxFree_real_T /export:emxInit_real_T /export:emxEnsureCapacity_real_T
+
+ldxxflags =  /nologo    /DLL /LIBPATH:"$matlabdir\extern\lib\win64\microsoft" libmx.lib libmex.lib libmat.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib libMatlabDataArray.lib libMatlabEngine.lib  /out:"rbc_solver_interp_mex.mexw64" /LIBPATH:"$matlabdir\extern\lib\win64\microsoft" libmwblas.lib libemlrt.lib libcovrt.lib libut.lib libmwmathutil.lib libiomp5md.lib /nodefaultlib:vcomp /LIBPATH:"$matlabdir\bin\win64" /export:mexFunction /export:mexfilerequiredapiversion /export:emlrtMexFcnProperties /export:rbc_solver_interp /export:rbc_solver_interp_initialize /export:rbc_solver_interp_terminate /export:rbc_solver_interp_atexit /export:emlrt_marshallIn /export:b_emlrt_marshallIn /export:g_emlrt_marshallIn /export:c_emxFreeStruct_anonymous_funct /export:emxFreeStruct_struct_T /export:c_emxInitStruct_anonymous_funct /export:emxInitStruct_struct_T /export:emxFree_real_T /export:emxInit_real_T /export:emxEnsureCapacity_real_T
+
+linkobjs = 
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in /Fo$out
+
+rule cxx
+    command = $cxx $cxxflags $in /Fo$out
+
+rule link
+    command = $linker @$out.rsp $linkobjs $ldflags
+    rspfile = $out.rsp
+    rspfile_content = $in
+
+rule linkxx
+    command = $linkerxx $in $linkobjs $ldxxflags
+
+# Build
+build $builddir\rbc_solver_interp_data.obj : cc $root\rbc_solver_interp_data.c
+build $builddir\rt_nonfinite.obj : cc $root\rt_nonfinite.c
+build $builddir\rbc_solver_interp_initialize.obj : cc $root\rbc_solver_interp_initialize.c
+build $builddir\rbc_solver_interp_terminate.obj : cc $root\rbc_solver_interp_terminate.c
+build $builddir\rbc_solver_interp.obj : cc $root\rbc_solver_interp.c
+build $builddir\mtimes.obj : cc $root\mtimes.c
+build $builddir\_coder_rbc_solver_interp_api.obj : cc $root\interface\_coder_rbc_solver_interp_api.c
+build $builddir\_coder_rbc_solver_interp_mex.obj : cc $root\interface\_coder_rbc_solver_interp_mex.c
+build $builddir\brent_min.obj : cc $root\brent_min.c
+build $builddir\eml_int_forloop_overflow_check.obj : cc $root\eml_int_forloop_overflow_check.c
+build $builddir\rbc_solver_interp_emxutil.obj : cc $root\rbc_solver_interp_emxutil.c
+build $builddir\rbc_solver_interp_mexutil.obj : cc $root\rbc_solver_interp_mexutil.c
+build $builddir\_coder_rbc_solver_interp_info.obj : cc $root\interface\_coder_rbc_solver_interp_info.c
+build $builddir\c_mexapi_version.obj : cc $matlabdir\extern\version\c_mexapi_version.c
+
+# Link
+build $root\rbc_solver_interp_mex.mexw64 : link $builddir\rbc_solver_interp_data.obj $builddir\rt_nonfinite.obj $builddir\rbc_solver_interp_initialize.obj $builddir\rbc_solver_interp_terminate.obj $builddir\rbc_solver_interp.obj $builddir\mtimes.obj $builddir\_coder_rbc_solver_interp_api.obj $builddir\_coder_rbc_solver_interp_mex.obj $builddir\brent_min.obj $builddir\eml_int_forloop_overflow_check.obj $builddir\rbc_solver_interp_emxutil.obj $builddir\rbc_solver_interp_mexutil.obj $builddir\_coder_rbc_solver_interp_info.obj $builddir\c_mexapi_version.obj 
