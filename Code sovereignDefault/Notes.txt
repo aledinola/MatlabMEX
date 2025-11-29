@@ -1,0 +1,18 @@
+The sovereign default model: 
+
+The model follows Aguiar and Gopinath (2006) JIE model (includes exogenous cyclical and trend growth shocks), 
+but augmented with long-maturity debts (Chatterjee and Eyigungor, 2012, AER) and debt renegotiation (Mihalache, 2020, JIE). 
+
+The model has tow exogenous states (m,z) (trend, cycle) and one endogenous state b (debts). m and z are 
+discretized into 25 and 25 grids, b discretized into 200/400 grids. 
+
+main_benchmark solves the benchmark model (with long-maturity debts and renegotiation), main_benchmark_varSZ uses variable-size inputs;
+
+main_binary_monotonic solves a reduced model (with one-period debt without renegotiation) with brute force as well as the binary monotonic method ;
+
+main_interpolation solves the reduced model with linear interpolation method; 
+
+main_vectorzied solves the reduced model with vectorized method (above methods uses nested loops). 
+
+
+

@@ -1,0 +1,6 @@
+mex parfor
+
+Start Value Function Iteration
+Time return matrix:       0.889517 
+Time vfi:                 0.583466 
+Time return matrix + vfi: 1.472983 
