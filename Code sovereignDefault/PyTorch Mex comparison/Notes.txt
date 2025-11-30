@@ -1,0 +1,7 @@
+This folder compares the performance of PyTorch and Matlab/MEX in solving a one-peroid sovereign default model, using CPU and GPU. The result replicates Panel 2, Table 5 in our paper. 
+
+
+pytorch_DuarteFP64.py follows the method in Duarte et al (2020) "Benchmarking machine-
+learning software and hardware for quantitative economics". This code uses JIT compilation to run the solving code on CPU/GPU. Unlike Duarte et al (2020), pytorch_DuarteFP64.py uses double precision (FP64) to be in line with Matlab/MEX/Fortran implementations in our paper.  
+
+solvdef_fv.m (calls function fv_solver.m) uses the same algorithm on Matlab/MEX CUDA. 
